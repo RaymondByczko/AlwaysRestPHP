@@ -121,13 +121,13 @@ export function testSpaceApi(idUpdate) {
 		.catch(err => console.error(err));
 }
 
-export function testSpaceApi2(idUpdate) {
+export function testSpaceApi2(newsSource, idUpdate) {
 	const options = {
 	method: 'GET'
 	};
 
 
-fetch('https://AlwaysRestPHP.rbyczko.repl.co/space.php', options)
+fetch('https://AlwaysRestPHP.rbyczko.repl.co/space.php?newsSource='+newsSource, options)
 	.then(response => response.json())
 	.then(response => {
 		console.log(response);

@@ -30,11 +30,18 @@ if ($err) {
 }
 }
 
-function space() {
+function space($newsSource="") {
 $curl = curl_init();
 $ra = $_ENV['ra'];
+$urlSuffix = "";
+if ($newsSource != "") {
+	$urlSuffix = "/".$newsSource;
+}
+if ($newsSource == "all") {
+	$urlSuffix = "";
+}
 curl_setopt_array($curl, [
-	CURLOPT_URL => "https://space-news.p.rapidapi.com/news/guardian",
+	CURLOPT_URL => "https://space-news.p.rapidapi.com/news".$urlSuffix,
 	CURLOPT_RETURNTRANSFER => true,
 	CURLOPT_FOLLOWLOCATION => true,
 	CURLOPT_ENCODING => "",

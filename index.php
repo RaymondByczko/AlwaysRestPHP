@@ -29,6 +29,7 @@
 		<div class="grid-item item6" id="id_item6">Item6
 		</div>
 		<div class="grid-item item7">
+			
 			<label for="covid_country">Enter 2-covid:</label>
 			<select name="covid_country" id="id_covid_country">
 				<option value="Canada">Canada</option>
@@ -37,6 +38,13 @@
 				<option value="Ireland">Ireland</option>
 				<option value="Scotland">Scotland</option>
 				<option value="Global">Global</option>
+			</select>
+			<label for="space_news_src">Enter 4-space:</label>
+			<select name="space_news_src" id="id_space_news_src">
+				<option value="telegraph">Telegraph</option>
+				<option value="guardian">The Guardian</option>
+				<option value="sun">The Sun</option>
+				<option value ="all">All sources</option>
 			</select>
 		</div>
 	</div>
@@ -47,7 +55,9 @@
 								testEnvNewsLive('id_item6');
 						}
 						function space(){
-                testSpaceApi2('id_item6');
+							  let newsSource = document.querySelector('#id_space_news_src').value;
+								console.log("space-newsSource=" + newsSource);
+                testSpaceApi2(newsSource,'id_item6');
             }
 					  function covid(){
 								let country = document.querySelector('#id_covid_country').value;

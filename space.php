@@ -1,9 +1,8 @@
 <?php
 require 'curlRestCalls.php';
-$call = space();
-// $strCall = var_export($call, true);
-// echo json_encode($strCall);
+// $newsSource = "guardian";
+$newsSource = $_GET['newsSource'];
+$call = space($newsSource);
 header("Content-Type: application/json");
-// echo json_encode($call['response'], JSON_PRETTY_PRINT);
 echo json_encode($call['response']);
 ?>
