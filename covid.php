@@ -1,6 +1,7 @@
 <?php
 require 'curlRestCalls.php';
-$call = covid('Japan');
+$country = $_GET['country'];
+$call = covid($country);
 header("Content-Type: application/json");
 echo json_encode($call['response']);
 ?>

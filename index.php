@@ -28,7 +28,12 @@
 		</div>
 		<div class="grid-item item6" id="id_item6">Item6
 		</div>
-		<div class="grid-item item7">Item7
+		<div class="grid-item item7">
+			<label for="covid_country">Enter 2-covid:</label>
+			<select name="covid_country" id="id_covid_country">
+				<option value="Canada">Canada</option>
+				<option value="Japan">Japan</option>
+			</select>
 		</div>
 	</div>
 	<script type="module" defer>
@@ -41,7 +46,9 @@
                 testSpaceApi2('id_item6');
             }
 					  function covid(){
-								testCovidApi2('id_item6');
+								let country = document.querySelector('#id_covid_country').value;
+								console.log('country='+country);
+								testCovidApi2(country, 'id_item6');
 						}
 						function webcam(){
 							testWebcamIE2('id_item6');

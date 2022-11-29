@@ -23,12 +23,12 @@ export function testCovidApi(idUpdate) {
 		.catch(err => console.error(err));
 }
 
-export function testCovidApi2(idUpdate) {
+export function testCovidApi2(country, idUpdate) {
 	const options = {
 		method: 'GET'
 	};
 
-	fetch('https://AlwaysRestPHP.rbyczko.repl.co/covid.php', options)
+	fetch('https://AlwaysRestPHP.rbyczko.repl.co/covid.php?country='+country, options)
 		.then(response => response.json())
 		.then(response => {
 			console.log(response);
