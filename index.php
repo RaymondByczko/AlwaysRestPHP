@@ -49,7 +49,7 @@
 		</div>
 	</div>
 	<script type="module" defer>
-            import {outputConsole, testCovidApi, testCovidApi2, testEnvNewsLive, testClimateApi, testSpaceApi, testSpaceApi2, testWebcamIE, testWebcamIE2, testYoutubeMeta} from './script.js';
+            import {outputConsole, testCovidApi, testCovidApi2, testEnvNewsLive, testClimateApi, testSpaceApi, testSpaceApi2, testWebcamIE, testWebcamIE2, testYoutubeMeta, testYoutubeMeta2} from './script.js';
             outputConsole('after import');
             function climate(){
 								testEnvNewsLive('id_item6');
@@ -68,7 +68,7 @@
 							testWebcamIE2('id_item6');
 						}
 						function youtube(){
-							testYoutubeMeta('id_item6');
+							testYoutubeMeta2('zj9DWwznF1Q','id_item6');
 						}
             document.querySelector('#id_btn1').addEventListener("click", ()=>{outputConsole("btn1 called")});
             document.querySelector('#id_btn2').addEventListener("click", ()=>{covid();});

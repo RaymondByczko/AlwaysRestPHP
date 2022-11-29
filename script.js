@@ -191,3 +191,17 @@ fetch('https://youtube-to-mp34.p.rapidapi.com/metadata/P0PBuWFeTY4', options)
 	})
 	.catch(err => console.error(err));	
 }
+
+export function testYoutubeMeta2(idVideo, idUpdate) {
+const options = {
+	method: 'GET'
+};
+fetch('https://AlwaysRestPHP.rbyczko.repl.co/youtube.php?idVideo='+idVideo, options)
+	.then(response => response.json())
+	.then(response => {
+		console.log(response);
+		document.querySelector('#' + idUpdate).innerHTML =
+	'<pre>' + JSON.stringify(JSON.parse(response),null,"\t") + '</pre>';
+	})
+	.catch(err => console.error(err));	
+}
