@@ -46,6 +46,12 @@
 				<option value="sun">The Sun</option>
 				<option value ="all">All sources</option>
 			</select>
+			<label for="youtube">Enter 6-youtube-meta:</label>
+			<select name="youtube" id="id_youtube">
+				<option value="zj9DWwznF1Q">Second Thought-Student Debt</option>
+				<option value="QWRRnzqRxY8">Democracy at Work-Unemployment</option>
+				
+			</select>
 		</div>
 	</div>
 	<script type="module" defer>
@@ -68,7 +74,8 @@
 							testWebcamIE2('id_item6');
 						}
 						function youtube(){
-							testYoutubeMeta2('zj9DWwznF1Q','id_item6');
+							let idYoutube = document.querySelector('#id_youtube').value;
+							testYoutubeMeta2(idYoutube,'id_item6');
 						}
             document.querySelector('#id_btn1').addEventListener("click", ()=>{outputConsole("btn1 called")});
             document.querySelector('#id_btn2').addEventListener("click", ()=>{covid();});

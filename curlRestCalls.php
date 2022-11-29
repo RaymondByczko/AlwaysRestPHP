@@ -96,12 +96,12 @@ if ($err) {
 }
 }
 
-function youtube(){
+function youtube($idVideo){
 
 $curl = curl_init();
 $ra = $_ENV['ra'];
 curl_setopt_array($curl, [
-	CURLOPT_URL => "https://youtube138.p.rapidapi.com/video/details/?id=zj9DWwznF1Q&hl=en&gl=US",
+	CURLOPT_URL => "https://youtube138.p.rapidapi.com/video/details/?id=".$idVideo."&hl=en&gl=US",
 	CURLOPT_RETURNTRANSFER => true,
 	CURLOPT_FOLLOWLOCATION => true,
 	CURLOPT_ENCODING => "",
