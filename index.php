@@ -33,6 +33,10 @@
 			<select name="covid_country" id="id_covid_country">
 				<option value="Canada">Canada</option>
 				<option value="Japan">Japan</option>
+				<option value="US">US</option>
+				<option value="Ireland">Ireland</option>
+				<option value="Scotland">Scotland</option>
+				<option value="Global">Global</option>
 			</select>
 		</div>
 	</div>
