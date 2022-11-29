@@ -60,11 +60,11 @@ if ($err) {
 }
 }
 
-function covid() {
+function covid($country) {
 $curl = curl_init();
 $ra = $_ENV['ra'];
 curl_setopt_array($curl, [
-	CURLOPT_URL => "https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/total?country=Canada",
+	CURLOPT_URL => "https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/total?country=".$country,
 	CURLOPT_RETURNTRANSFER => true,
 	CURLOPT_FOLLOWLOCATION => true,
 	CURLOPT_ENCODING => "",
