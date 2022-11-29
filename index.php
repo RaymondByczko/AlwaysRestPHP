@@ -32,7 +32,7 @@
 		</div>
 	</div>
 	<script type="module" defer>
-            import {outputConsole, testCovidApi, testEnvNewsLive, testClimateApi, testSpaceApi, testSpaceApi2, testWebcamIE, testWebcamIE2, testYoutubeMeta} from './script.js';
+            import {outputConsole, testCovidApi, testCovidApi2, testEnvNewsLive, testClimateApi, testSpaceApi, testSpaceApi2, testWebcamIE, testWebcamIE2, testYoutubeMeta} from './script.js';
             outputConsole('after import');
             function climate(){
 								testEnvNewsLive('id_item6');
@@ -41,7 +41,7 @@
                 testSpaceApi2('id_item6');
             }
 					  function covid(){
-								testCovidApi('id_item6');
+								testCovidApi2('id_item6');
 						}
 						function webcam(){
 							testWebcamIE2('id_item6');
