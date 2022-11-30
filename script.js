@@ -173,13 +173,13 @@ fetch('https://webcamstravel.p.rapidapi.com/webcams/list/country=IE?show=webcams
 	.catch(err => console.error(err));
 }
 
-export function testWebcamIE2(idUpdate) {
+export function testWebcamIE2(country,idUpdate) {
 	const options = {
 	method: 'GET'
 	};
 
 
-fetch('https://AlwaysRestPHP.rbyczko.repl.co/webcam.php', options)
+fetch('https://AlwaysRestPHP.rbyczko.repl.co/webcam.php?country='+country, options)
 	.then(response => response.json())
 	.then(response => {
 		console.log(response);

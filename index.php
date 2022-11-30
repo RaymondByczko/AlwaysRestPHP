@@ -23,7 +23,7 @@
 			<div class="btn btn2" id="id_btn2">2-covid</div>
 			<div class="btn btn3" id="id_btn3">3-climate</div>
 			<div class="btn btn4" id="id_btn4">4-space</div>
-			<div class="btn btn5" id="id_btn5">5-webcam-ie</div>
+			<div class="btn btn5" id="id_btn5">5-webcam</div>
 			<div class="btn btn6" id="id_btn6">6-youtube-meta</div>
 		</div>
 		<div class="grid-item item6" id="id_item6">Item6
@@ -53,7 +53,16 @@
 				
 			</select>
 		</div>
-		<div class="grid-item item8" id="id_item8">Item8
+		<div class="grid-item item8" id="id_item8">
+			<label for="webcam_country">Enter 5-webcam:</label>
+			<select name="webcam_country" id="id_webcam_country">
+				<option value="CA">Canada</option>
+				<option value="JP">Japan</option>
+				<option value="US">US</option>
+				<option value="IE">Ireland</option>
+				<option value="GB">Great Britian</option>
+				<option value="Global">Global</option>
+			</select>
 		</div>
 	</div>
 	<script type="module" defer>
@@ -76,7 +85,8 @@
 								testCovidApi2(country, 'id_item6');
 						}
 						function webcam(){
-							testWebcamIE2('id_item6');
+							let webcamCountry = document.querySelector('#id_webcam_country').value;
+							testWebcamIE2(webcamCountry, 'id_item6');
 						}
 						function youtube(){
 							let idYoutube = document.querySelector('#id_youtube').value;

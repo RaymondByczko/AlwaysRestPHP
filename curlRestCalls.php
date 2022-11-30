@@ -31,12 +31,12 @@ if ($err) {
 }
 }
 
-function webcam() {
+function webcam($country) {
 $curl = curl_init();
 $ra = $_ENV['ra'];
 
 curl_setopt_array($curl, [
-	CURLOPT_URL => "https://webcamstravel.p.rapidapi.com/webcams/list/country=IE?show=webcams%3Aimage%2Clocation&lang=en",
+	CURLOPT_URL => "https://webcamstravel.p.rapidapi.com/webcams/list/country=".$country."?show=webcams%3Aimage%2Clocation&lang=en",
 	CURLOPT_RETURNTRANSFER => true,
 	CURLOPT_FOLLOWLOCATION => true,
 	CURLOPT_ENCODING => "",

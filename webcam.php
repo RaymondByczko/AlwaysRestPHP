@@ -1,9 +1,7 @@
 <?php
 require 'curlRestCalls.php';
-$call = webcam();
-// $strCall = var_export($call, true);
-// echo json_encode($strCall);
+$country = $_GET['country'];
+$call = webcam($country);
 header("Content-Type: application/json");
-// echo json_encode($call['response'], JSON_PRETTY_PRINT);
 echo json_encode($call['response']);
 ?>
