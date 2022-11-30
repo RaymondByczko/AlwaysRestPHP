@@ -5,6 +5,22 @@ export function outputConsole(msg) {
 	console.log(msg);
 }
 
+export function testBurger(idUpdate) {
+	const options = {
+		method: 'GET'
+	};
+
+	fetch('https://AlwaysRestPHP.rbyczko.repl.co/burger.php', options)
+		.then(response => response.json())
+		.then(response => {
+			console.log(response);
+			document.querySelector('#' + idUpdate).innerHTML = 
+				'<pre>' + JSON.stringify(JSON.parse(response),null,"\t")  + '</pre>';
+		})
+		.catch(err => console.error(err));
+}
+
+
 export function testCovidApi(idUpdate) {
 	const options = {
 		method: 'GET',
