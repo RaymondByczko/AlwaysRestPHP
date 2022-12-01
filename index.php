@@ -64,6 +64,12 @@
 				<option value="Global">Global</option>
 			</select>
 		</div>
+		<div class="grid-item item9" id="id_item9">
+			<div>REST DATA SIZE:</div>
+			<div id="id_rest_data_size"></div>
+			<div>URL:</div>
+			<div id="id_url"></div>
+		</div>
 	</div>
 	<script type="module" defer>
             import {outputConsole, testBurger, testCovidApi, testCovidApi2, testEnvNewsLive, testClimateApi, testSpaceApi, testSpaceApi2, testWebcamIE, testWebcamIE2, testYoutubeMeta, testYoutubeMeta2} from './script.js';

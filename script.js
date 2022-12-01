@@ -9,7 +9,7 @@ export function testBurger(idUpdate) {
 	const options = {
 		method: 'GET'
 	};
-
+  document.querySelector('#id_url').innerHTML = 'burger foo'; 
 	fetch('https://AlwaysRestPHP.rbyczko.repl.co/burger.php', options)
 		.then(response => response.json())
 		.then(response => {
