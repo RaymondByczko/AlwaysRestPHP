@@ -21,13 +21,18 @@ curl_setopt_array($curl, [
 
 $response = curl_exec($curl);
 $err = curl_error($curl);
+$response_code = curl_getinfo($curl, CURLINFO_RESPONSE_CODE);
+// fwrite(STDERR, 'response something');
+	// $out = fopen('php://stderr', 'w'); //output handler
+// fputs($out, "response something stderr.\n"); //writing output operation
+// fclose($out); //closing handler
 
-curl_close($curl);
+	curl_close($curl);
 
 if ($err) {
-	return array('status'=>'failed', 'response'=>"cURL Error #:" . $err);
+	return array('status'=>'failed', 'response'=>"cURL Error #:" . $err, 'other'=>'response_code:'.$response_code);
 } else {
-	return array('status'=>'success','response'=>$response);
+	return array('status'=>'success','response'=>$response, 'other'=>'response_code:'.$response_code);
 }
 }
 

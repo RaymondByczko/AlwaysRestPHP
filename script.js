@@ -11,13 +11,28 @@ export function testBurger(idUpdate) {
 	};
   document.querySelector('#id_url').innerHTML = 'burger foo'; 
 	fetch('https://AlwaysRestPHP.rbyczko.repl.co/burger.php', options)
-		.then(response => response.json())
 		.then(response => {
-			console.log(response);
+			console.log('1. response.ok='+response.ok);
+			console.log('1. response.status='+response.status);
+			// return response.json();})
+			// response.json();})
+			response.json().then(responseJ => {
+				console.log("after convert to json...");
+				console.log(responseJ);
+				console.log("after display of json response..");
+				console.log('2. response.ok='+responseJ.ok);
 			document.querySelector('#' + idUpdate).innerHTML = 
-				'<pre>' + JSON.stringify(JSON.parse(response),null,"\t")  + '</pre>';
+				'<pre>' + JSON.stringify(JSON.parse(responseJ),null,"\t")  + '</pre>';
+		}, reject=>{
+				console.log('response json rejected');
+				console.log('reject='+reject);
 		})
-		.catch(err => console.error(err));
+		.catch(err => {
+			console.error('err: start');
+			console.error(err);
+			document.querySelector('#' + idUpdate).innerHTML = '<pre>' + 'Error with Burger fetch.' + '</pre>';
+		});
+})
 }
 
 
