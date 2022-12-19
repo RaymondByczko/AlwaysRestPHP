@@ -32,7 +32,7 @@ $response_code = curl_getinfo($curl, CURLINFO_RESPONSE_CODE);
 if ($err) {
 	return array('status'=>'failed', 'response'=>"cURL Error #:" . $err, 'other'=>'response_code:'.$response_code);
 } else {
-	return array('status'=>'success','response'=>$response, 'other'=>'response_code:'.$response_code);
+	return array('status'=>'success','response'=>$response, 'response_code'=>$response_code);
 }
 }
 

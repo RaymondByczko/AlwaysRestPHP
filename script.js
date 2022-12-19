@@ -14,8 +14,11 @@ export function testBurger(idUpdate) {
 		.then(response => {
 			console.log('1. response.ok='+response.ok);
 			console.log('1. response.status='+response.status);
+			console.log('1. response.headers.content-type='+response.headers.get('Content-Type'));
 			// return response.json();})
 			// response.json();})
+			// throw('Unexpected Content-Type');
+			return Promise.reject('Unexpected Content-Type - reject');})
 			response.json().then(responseJ => {
 				console.log("after convert to json...");
 				console.log(responseJ);
@@ -32,7 +35,6 @@ export function testBurger(idUpdate) {
 			console.error(err);
 			document.querySelector('#' + idUpdate).innerHTML = '<pre>' + 'Error with Burger fetch.' + '</pre>';
 		});
-})
 }
 
 
