@@ -104,6 +104,36 @@ if ($err) {
 }
 }
 
+class CurlParameters {
+	protected $url;
+	protected $urlFunction;
+	protected $xrHost;
+	protected $xrKey;
+	
+	public function _construct($url, $urlFunction, $xrHost, $xrKey){
+		$this->url = $url;
+		$this->urlFunction = $urlFunction;
+		$this->xrHost = $xrHost;
+		$this->xrKey = $xrKey;
+	}
+	public function getUrl($param1){
+		return call_user_func($this->urlFunction, $param1);
+	}
+}
+
+
+function urlFunctionCovid($param1){
+	$country = $param1;
+	return "https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/total?country=".$country;
+}
+
+$covidCurlParams = new CurlParameters(
+	null,
+	"urlFunctionCovid",
+	"covid-19-coronavirus-statistics.p.rapidapi.com",
+	$_ENV['ra']
+	);
+
 function covid($country) {
 $curl = curl_init();
 $ra = $_ENV['ra'];
